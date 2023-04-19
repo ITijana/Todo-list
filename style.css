@@ -24,3 +24,22 @@ body {
    font-weight: bold;
    font-size: 20px;
 }
+
+#todo-input {
+   width: 250px;
+   border-radius: 5px;
+   border: solid 1px grey;
+   padding: 7px 10px;
+   cursor: pointer;
+}
+
+#todo-list {
+   width: 250px;
+}
+
+.delete, .edit, #add-button {
+   border-radius: 10px;
+   border: none;
+   padding: 4px 10px;
+   cursor: pointer;
+}

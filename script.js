@@ -52,5 +52,16 @@ function renderTodoList() {
          });
       });
 
+   document.querySelectorAll('.edit')
+      .forEach((editButton, index) => {
+        editButton.addEventListener('click', e => {
+         e.preventDefault();
+         let todo = todoInput.value.trim();
+         if (todo !== "" && todo.length > 1 && todo.length < 11) {
+            todoList.name = todo;
+         }
+        });
+   });
+
    localStorage.setItem('todo', JSON.stringify(todoList));
 }
