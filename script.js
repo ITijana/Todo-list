@@ -1,6 +1,7 @@
 const addBtn = document.getElementById('add-button');
 const todoInput = document.getElementById('todo-input');
 const todoListDiv = document.getElementById('todo-list');
+const alert = document.getElementById('alert');
 
 const todoList = JSON.parse(localStorage.getItem("todo"));
 
@@ -16,12 +17,15 @@ addBtn.addEventListener('click', addTodo);
 
 function addTodo() {
    if (todoInput.value === '' || todoInput.value === " ") {
-      alert('You need to add todo.');
+      alert.innerHTML = 'You need to add todo.';
+      alert.style.color = 'purple';
+      alert.style.textAlign = 'center';
    }
    else {
       todoList.push({
          name: todoInput.value
       });
+      alert.style.display = 'none';
    }
 
    todoInput.value = '';
