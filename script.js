@@ -38,15 +38,21 @@ function renderTodoList() {
    todoList.forEach(todoObject => {
       const {name} = todoObject;
       const html = `
-         <p>${name}
-         <button class="delete">Delete</button> 
-         <button class="edit">Edit</button>
-         </p>
+         <p>${name}</p>
+         <button class="delete">Delete</button>  
       `;
       todoListHTML += html;
    });
 
    todoListDiv.innerHTML = todoListHTML;
+
+   const todoItems = todoListDiv.querySelectorAll('p');
+
+   todoItems.forEach(item => {
+      item.addEventListener('click', () => {
+         item.classList.toggle('line-through');
+      });
+   });
 
    document.querySelectorAll('.delete')
        .forEach((deleteButton, index) => {
@@ -55,17 +61,6 @@ function renderTodoList() {
              renderTodoList();
          });
       });
-
-   document.querySelectorAll('.edit')
-      .forEach((editButton, index) => {
-        editButton.addEventListener('click', e => {
-         e.preventDefault();
-         let todo = todoInput.value.trim();
-         if (todo !== "" && todo.length > 1 && todo.length < 11) {
-            todoList.name = todo;
-         }
-        });
-   });
 
    localStorage.setItem('todo', JSON.stringify(todoList));
 }

@@ -29,6 +29,7 @@ body {
 }
 
 #todo-name {
+   display: block;
    color: black;
    font-weight: bold;
    font-size: 20px;
@@ -53,3 +54,10 @@ button {
    margin-top: 5px;
 }
 
+.line-through {
+   text-decoration: line-through;
+}
+
+p {
+   display: inline-block;
+}
