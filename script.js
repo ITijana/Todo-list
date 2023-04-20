@@ -38,8 +38,10 @@ function renderTodoList() {
    todoList.forEach(todoObject => {
       const {name} = todoObject;
       const html = `
+      <div class='todo-div'>
          <p class='paragraph-line'>${name}</p>
          <button class="delete">Delete</button>  
+      </div>
       `;
       todoListHTML += html;
    });
@@ -58,7 +60,7 @@ function renderTodoList() {
        .forEach((deleteButton, index) => {
          deleteButton.addEventListener('click', () => {
             todoList.splice(index, 1);
-             renderTodoList();
+            renderTodoList();
          });
       });
 
