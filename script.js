@@ -38,7 +38,7 @@ function renderTodoList() {
    todoList.forEach(todoObject => {
       const {name} = todoObject;
       const html = `
-         <p>${name}</p>
+         <p class='paragraph-line'>${name}</p>
          <button class="delete">Delete</button>  
       `;
       todoListHTML += html;

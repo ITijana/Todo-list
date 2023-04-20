@@ -29,7 +29,6 @@ body {
 }
 
 #todo-name {
-   display: block;
    color: black;
    font-weight: bold;
    font-size: 20px;
@@ -58,6 +57,6 @@ button {
    text-decoration: line-through;
 }
 
-p {
+.paragraph-line {
    display: inline-block;
 }
