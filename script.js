@@ -67,12 +67,13 @@ function renderTodoList() {
       .forEach((deleteButton, index) => {
          deleteButton.addEventListener('click', () => {
             todoList.splice(index, 1);
-            localStorage.setItem('todo', JSON.stringify(todoList));
             renderTodoList();
          });
       });
-   
+      
    const todoItems = todoListDiv.querySelectorAll('p');
+
+   localStorage.setItem('todo', JSON.stringify(todoList));
 
    todoItems.forEach(item => {
       item.addEventListener('click', () => {
@@ -82,6 +83,6 @@ function renderTodoList() {
                e.lineThrough = !e.lineThrough;
             }
          });
-      });
+      });  
    });
 }
